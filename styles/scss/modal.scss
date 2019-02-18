@@ -1,0 +1,90 @@
+.modal {
+  margin: auto;
+  background-color: $color-light;
+  max-width: 1000px;
+  position: absolute;
+  top: 50px;;
+  left: 0;
+  right: 0;
+  z-index: 101;
+
+  @include breakpoint(md) {
+    width: 80%;
+  }
+}
+
+.modal-date {
+  margin: 40px 0 0 40px;
+}
+
+.modal-news-wrapper {
+  background-color: $color-gray-light;
+  position: relative;
+}
+
+.modal-news-headline {
+  margin: 15px 0;
+}
+
+.modal-dim {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.modal-icons {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+
+  @include breakpoint(md) {
+    right: -50px;
+    flex-direction: column;
+  }
+
+  .modal-icon {
+    display: flex;
+  }
+}
+
+.modal-icon {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    background-color: $color-danger;
+  }
+}
+
+.modal-close {
+  background-color: $color-gray-light;
+}
+
+.modal-social {
+  background-color: $color-dark;
+  color: $color-light;
+}
+
+.modal-dates {
+  border-top: 1px solid $color-gray;
+  padding: 25px 0;
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $color-gray;
+    margin-bottom: 50px;
+  }
+}

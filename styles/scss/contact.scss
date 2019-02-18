@@ -1,0 +1,57 @@
+.contact-wrapper {
+  @include breakpoint(md) {
+    display: flex;
+  }
+}
+
+.contact-column {
+  @include breakpoint(md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  &:nth-child(2) {
+    background-color: $color-dark;
+  }
+}
+
+.contact-form-wrapper {
+  max-width: 400px;
+}
+
+.contact-form {
+  margin-top: 30px;
+}
+
+.contact-form-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border: none;
+  background-color: $color-gray-light;
+  font-size: 16px;
+}
+
+.contact-form-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border: 2px solid $color-dark;
+  color: $color-dark;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .5s;
+
+  &:hover {
+    color: $color-light;
+    background-color: $color-dark;
+  }
+}
+
+.contact-partners {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

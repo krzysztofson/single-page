@@ -1,0 +1,97 @@
+.team-section {
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 20%);
+  padding-top: 100px;
+  background-color: $color-dark;
+  color: $color-light;
+
+  @include breakpoint(md) {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 38%);
+    padding-top: 200px;
+    margin-top: 125px;
+  }
+}
+
+.team-grid {
+  background-color: $color-dark;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.team-member {
+  position: relative;
+}
+
+.team-member-img {
+  position: relative;
+  filter: grayscale(100%);
+  transition: .5s ease;
+
+  .team-member:hover & {
+    filter: grayscale(0);
+    z-index: 2;
+  }
+}
+
+.team-member-info {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-gray-light;
+  display: flex;
+  flex-direction: column;
+  transition: .5s ease;
+
+  .team-member-img:hover ~ &,
+  .team-member-img:active ~ &,
+  .team-member-img:focus ~ & {
+    left: 100%;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .team-member:hover:nth-child(2n) &,
+  .team-member:active:nth-child(2n) &,
+  .team-member:focus:nth-child(2n) & {
+    left: -100%;
+
+    @include breakpoint(md) {
+      left: 100%;
+    }
+  }
+
+  .team-member:hover:nth-child(3n) &,
+  .team-member:active:nth-child(3n) &,
+  .team-member:focus:nth-child(3n) & {
+    @include breakpoint(md) {
+      left: -100%;
+    }
+
+    @include breakpoint(lg) {
+      left: 100%;
+    }
+  }
+
+  .team-member:hover:nth-child(5n) &,
+  .team-member:active:nth-child(5n) &,
+  .team-member:focus:nth-child(5n) & {
+    @include breakpoint(lg) {
+      left: -100%;
+    }
+  }
+}
+
+.team-member-name {
+  margin-top: auto;
+}

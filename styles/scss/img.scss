@@ -1,0 +1,20 @@
+.img-responsive {
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
+.img-timeline {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1400px;
+    z-index: 1;
+  }
+}

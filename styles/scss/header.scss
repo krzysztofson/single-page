@@ -1,0 +1,36 @@
+.header {
+  clip-path: polygon(100% 0%, 100% 100%, 0 90%, 0 0);
+  background: center / cover no-repeat url("../../assets/bg-img.jpg");
+  height: 700px;
+  position: relative;
+  display: flex;
+
+  @include breakpoint(md) {
+    clip-path: polygon(100% 90%, 50% 100%, 0 90%, 0 0, 100% 0);
+  }
+}
+
+.header-info {
+  margin-top: 100px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color-light;
+
+  @include breakpoint(md) {
+    margin-left: auto;
+    max-width: 400px;
+    color: $color-dark;
+  }
+}
+
+.header-img {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  z-index: -1;
+  width: 40%;
+
+  @include breakpoint(md) {
+    width: initial;
+  }
+}

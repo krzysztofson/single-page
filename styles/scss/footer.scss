@@ -1,0 +1,27 @@
+.footer {
+  padding: 120px 20px 50px;
+  margin-top: -100px;
+  background-color: $color-gray-light;
+  clip-path: polygon(100% 100%, 0 100%, 0% 30%, 50% 0%, 100% 30%);
+
+  @include breakpoint(md) {
+    clip-path: polygon(100% 100%, 0 100%, 0% 50%, 50% 0%, 100% 50%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+}
+
+.footer-link {
+  margin: 20px 10px;
+
+  @include breakpoint(md) {
+    margin: 0 10px;
+  }
+}
+
+.footer-social {
+  @include breakpoint(md) {
+    text-align: center;
+  }
+}
